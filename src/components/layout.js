@@ -6,25 +6,12 @@
  */
 
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
-import "./layout.css"
+import * as styles from "./layout.module.css"
+import { Link } from "gatsby"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
         style={{
           margin: `0 auto`,
@@ -33,15 +20,29 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `var(--space-5)`,
-            fontSize: `var(--font-sm)`,
-          }}
-        >
-          © {new Date().getFullYear()} &middot; Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+        <footer className={styles.footer}>
+          <ul>
+            <li className={styles.item}>
+              <a className={styles.link} href="">
+                FAQ
+              </a>
+            </li>
+            <li className={styles.item}>
+              <Link className={styles.link} to="/eula">
+                EULA
+              </Link>
+            </li>
+            <li className={styles.item}>
+              <Link className={styles.link} to="/terms-and-conditions">
+                Terms and Conditions
+              </Link>
+            </li>
+            <li className={styles.item}>
+              <Link className={styles.link} to="/privacy-policy">
+                Privacy Policy
+              </Link>
+            </li>
+          </ul>
         </footer>
       </div>
     </>
