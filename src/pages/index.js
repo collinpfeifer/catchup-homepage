@@ -1,5 +1,4 @@
 import * as React from "react"
-import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
@@ -13,12 +12,12 @@ const IndexPage = () => (
     <div className={styles.circle6}></div>
     <div className={styles.circle7}></div>
     <div className={styles.circle8}></div>
-    <div className="aboutmain uk-flex uk-flex-center uk-flex-middle uk-flex-column">
+    <div className="uk-flex uk-flex-center uk-flex-middle uk-flex-column">
       <StaticImage src="../images/catch_up_logo.png" className={styles.self} />
       <div>
         <a
           className="uk-button uk-button-default"
-          href=""
+          href="/"
           style={{
             backgroundColor: "black",
             color: "white",

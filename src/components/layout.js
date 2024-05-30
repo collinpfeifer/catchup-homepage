@@ -23,9 +23,9 @@ const Layout = ({ children }) => {
         <footer className={styles.footer}>
           <ul>
             <li className={styles.item}>
-              <a className={styles.link} href="">
-                FAQ
-              </a>
+              <Link className={styles.link} href="/support">
+                Support
+              </Link>
             </li>
             <li className={styles.item}>
               <Link className={styles.link} to="/eula">
